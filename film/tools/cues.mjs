@@ -1,0 +1,10 @@
+import { chromium } from "playwright";
+import fs from "node:fs";
+const b = await chromium.launch({ headless: true, args: ["--use-gl=angle", "--use-angle=gl"] });
+const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
+await p.goto("http://127.0.0.1:5180/?samples=1");
+await p.waitForFunction(() => window.film && window.film.ready);
+const out = await p.evaluate(() => ({ cues: window.film.cues(), duration: window.film.duration, shots: window.film.shots }));
+fs.writeFileSync(process.argv[2] ?? "../out/cues.json", JSON.stringify(out, null, 1));
+console.log(out.cues.length, "cues", out.duration.toFixed(3), "s");
+await b.close();

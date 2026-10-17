@@ -1,0 +1,17 @@
+# dependencies / caches
+node_modules/
+__pycache__/
+.DS_Store
+
+# local working material: reference films, frames, renders, mixes
+/ref/
+/out/
+
+# not redistributable or generated
+film/audio/bgm/
+film/audio/sfx/*.wav
+film/public/fonts/MiSans-*
+*.mp4
+*.mkv
+*.mov
+*.opus
