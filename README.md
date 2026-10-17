@@ -65,7 +65,7 @@ ffmpeg -i ../out/video.mp4 -i ../out/mix.wav -map 0:v -map 1:a -c:v copy -c:a aa
 
 ## 素材与致谢
 
-- 代码：GNU AGPL-3.0（[LICENSE](LICENSE)）。
+- 代码：GNU AGPL-3.0-or-later（[LICENSE](LICENSE)）。
 - 字体：Montserrat、JetBrains Mono，SIL Open Font License 1.1（见 `film/public/fonts/OFL-*.txt`）。
 - 贴图（`film/public/tex/`）与 `film/audio/reuse/` 里的合成音效来自作者的莱茵生命锁屏项目，由脚本生成；`glitch1/2`、`recover` 来自 Kenney *Interface Sounds*（CC0）。详见 `film/audio/reuse/README.md`。
 - 视觉参考：《明日方舟》特别映像《莱茵生命：访问》。∞ 标志是对照官方影片描摹的同人重绘。
@@ -83,4 +83,4 @@ A fan promo for Arknights' Rhine Lab. The mark's left loop holds a **＋** and i
 
 Everything is code (`film/`): an offline engine that averages 12–40 jittered sub-frames per frame (motion blur + AA), renders both shots across a cut to blend them with transition shaders, and lays one continuous HUD layer (header, step indicator, subtitles, a travelling section tile) over the picture. The ∞ sculpture is one instanced draw call whose formations morph into one another. Sound effects are synthesised by `tools/sfx.py`, and `tools/mix.py` edits the score and masters to −14 LUFS.
 
-Not included: the score (bring your own, `RHINE_BGM=…`), the MiSans font (optional, falls back to a system CJK font), and the official PV. Code is AGPL-3.0; fonts are OFL. This is an unofficial fan work, not affiliated with or endorsed by Hypergryph.
+Not included: the score (bring your own, `RHINE_BGM=…`), the MiSans font (optional, falls back to a system CJK font), and the official PV. Code is AGPL-3.0-or-later; fonts are OFL. This is an unofficial fan work, not affiliated with or endorsed by Hypergryph.
